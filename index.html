@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Validation</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+  <style>
+    html, body {
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="d-flex justify-content-center align-items-center" style="height: 100%; background-color: #d4d4d4;">
+    <div class="container w-25 shadow border p-4" style="background-color: white;">
+      <h1 class="text-center">User Form</h1>
+      <form id="myForm" action="./submit.php" method="post">
+        <div class="form-group">
+          <label for="firstName">*First Name:</label>
+          <input type="text" class="form-control" id="firstName" name="firstName" required aria-label="First Name">
+        </div>
+        <div class="form-group">
+          <label for="lastName">*Last Name:</label>
+          <input type="text" class="form-control" id="lastName" name="lastName" required aria-label="Last Name">
+        </div>
+        <div class="form-group">
+          <label for="email">*Email:</label>
+          <input type="email" class="form-control" id="email" name="email" required aria-label="Email">
+        </div>
+        <div class="form-group">
+          <label for="phone">*Phone:</label>
+          <input maxlength="10" title="Please enter a 10 digit US phone number" type="tel" class="form-control" id="phone" name="phone" pattern="^\d{10}$" required aria-label="Phone">
+        </div>
+        <button style="float:right;" type="submit" class="btn btn-primary rounded-0" aria-label="Submit"  data-target="#successModal">Submit</button>
+      </form>      
+    </div>
+  </div>
+
+
+  <!-- Success Modal -->
+  <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="successModalLabel">Form Submitted Successfully</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Thank you for submitting the form. Your submission has been successful.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary rounded-0" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+</body>
+<footer>
+</footer>
+</html>
+
+
